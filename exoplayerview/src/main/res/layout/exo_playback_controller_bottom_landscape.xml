@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@color/transparent"
+    android:orientation="vertical"
+    android:paddingTop="0dp"
+    android:paddingBottom="5dp">
+
+    <com.google.android.exoplayer2.ui.DefaultTimeBar
+        android:id="@+id/exo_player_progress_landscape"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        app:bar_height="2dp"
+        app:buffered_color="@color/white"
+        app:played_color="@color/lime"
+        app:scrubber_color="@color/lime"
+        app:unplayed_color="@color/gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@id/exo_player_position_duration_landscape"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingStart="5dp"
+            android:text="00:00"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/exo_player_play_wrapper_landscape"
+            app:layout_constraintEnd_toStartOf="@id/exo_player_controller_bottom_custom_view_landscape"
+            app:layout_constraintHorizontal_bias="0.065"
+            app:layout_constraintStart_toEndOf="@id/exo_player_next_landscape"
+            app:layout_constraintTop_toTopOf="@+id/exo_player_play_wrapper_landscape"
+            tools:text="00:04/06:09" />
+
+        <ImageButton
+            android:id="@id/exo_player_previous_landscape"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@string/exo_controls_next_description"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_skip_previous_white" />
+
+        <FrameLayout
+            android:id="@id/exo_player_play_wrapper_landscape"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            app:srcCompat="@drawable/ic_play_arrow_white_36dp">
+
+            <ImageButton
+                android:id="@id/exo_player_play_landscape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/exo_controls_play_description"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/ic_play_arrow_white_36dp" />
+
+            <ImageButton
+                android:id="@id/exo_player_pause_landscape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/exo_controls_pause_description"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/ic_pause_white_36dp" />
+        </FrameLayout>
+
+        <ImageButton
+            android:id="@id/exo_player_next_landscape"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@string/exo_controls_next_description"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_skip_next_white_36dp" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@id/exo_player_exit_fullscreen"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@null"
+                app:srcCompat="@drawable/ic_fullscreen_exit_white_36dp" />
+
+        </RelativeLayout>
+
+
+        <FrameLayout
+            android:id="@id/exo_player_controller_bottom_custom_view_landscape"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="2dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/exo_player_current_quality_landscape"
+            app:layout_constraintStart_toEndOf="@+id/exo_player_position_duration_landscape"
+            app:layout_constraintTop_toBottomOf="@+id/exo_player_progress_landscape">
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@id/exo_player_current_quality_landscape"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:textColor="@android:color/white"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/exo_player_exit_fullscreen"
+            app:layout_constraintStart_toEndOf="@id/exo_player_controller_bottom_custom_view_landscape"
+            app:layout_constraintTop_toTopOf="@+id/exo_player_position_duration_landscape"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="1080p" />
+
+    </LinearLayout>
+
+</LinearLayout>
